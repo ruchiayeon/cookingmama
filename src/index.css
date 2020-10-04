@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-size: 12pt;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.MainContain{
+  margin:1rem;
+}
+#preview-container img {
+  width:100%;
+  height: 100%;
+}
+
+/*font style 적용하기 위한 전역 변수 부분*/
+@font-face{
+  font-family: 'Sansita Swashed', cursive;
+  font-weight: 700;
+  src: url('./Fonts/SansitaSwashed-Bold.ttf') format("truetype");
 }
