@@ -4,15 +4,29 @@ import { AiFillPlusCircle } from 'react-icons/ai';
 
 const bounce = keyframes`
     0% {
-    transform: scale(1.2)
+    transform: scale(1.2);
+    color:#FDE34F;
   }
     50% {
-    transform: scale(1)
+    transform: scale(1);
+    color:#F9A783;
   }
   100% {
-    transform: scale(1.2)
+    transform: scale(1.2);
+    color:#FDE34F;
   }
 `;
+const swing = keyframes`
+0%, 50%{
+    transform: rotate(0deg);
+	}
+  5%, 15%, 25%, 35%, 45% {
+    transform: rotate(13deg);
+  }
+  10%, 20%, 30%, 40% {
+    transform: rotate(-13deg);
+  }
+;`
 
 const Addbutton = styled.button`
     filter: drop-shadow(2px 2px 2px #4e4e4e);
@@ -30,7 +44,8 @@ const Addbutton = styled.button`
     animation: ${bounce} 2s infinite;
     transition: 0.3s;
     &:hover{
-      color:#F9998B;
+      animation: ${swing} 2s infinite;
+      color:#97BB85;
       transition: 0.3s;
     }
 `

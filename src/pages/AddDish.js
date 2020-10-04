@@ -100,6 +100,20 @@ class Clock extends Component{
     )
 }}
 
+function textArea(){
+    return(
+        <div>
+            <textArea></textArea>
+        </div>
+    )
+}
+
+
+
+
+
+
+
 function AddRecipePage() {
   return (
     <>
@@ -107,7 +121,7 @@ function AddRecipePage() {
       <h1>Recipe History</h1>
       <Clock/>
       <FileUploader/>
-      
+      <textArea/>
       
     </>
   );

@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import "./index.css"
+import styled,{keyframes} from 'styled-components';
+import {useSpring,animated} from "react-spring";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom"
-
+import "./index.css"
 
 //페이지 라우팅
 import AllRecipe from "./pages/MainContain"
@@ -29,7 +29,7 @@ const Navbar =styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  filter:invert(1);
+  box-shadow: 0 0 black;
   background:#fff9;
   display:flex;
   height: 5rem;
@@ -61,23 +61,40 @@ const BasicBtn = styled.button`
 const MainContainBody = styled.main`
     min-height: 100vh;
     max-height: 100%;
-    background: #FDE34F;
+    background-image: linear-gradient(to bottom,  #FDE34F 0%, #fda085 100%);
     border-top-right-radius: 386px;
     padding: 1rem 3rem 10rem 3rem;
     margin: 7rem 0rem 0rem 0rem;  
     font-family: -webkit-pictograph;
 `
+const bounce = keyframes`
+0%, 50%{
+    transform: rotate(0deg);
+	}
+  5%, 15%, 25%, 35%, 45% {
+    transform: rotate(13deg);
+  }
+  10%, 20%, 30%, 40% {
+    transform: rotate(-13deg);
+  }
+`;
 const Logo = styled.img`
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(0px 0px 2px #FDE34F);
     width: 3rem;
     margin: 1rem 0rem 0rem 3rem;
+    transition:0.3s ease-in;
+    &:hover{
+        filter: drop-shadow(0px 0px 10px #F9A783);
+        animation: ${bounce} 2s infinite;
+        transition:0.3s ease-in;
+    }
 `
 
 
 
 //App main nav & Contain Routes
 function App() {
-  
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
     return (
     <div>
         
@@ -100,11 +117,12 @@ function App() {
           <Link to ="/addrecipe">
             <Addbuttons trigger ={['hover','focus']}/>
           </Link>
-      <MainContainBody>
-        <Route exact path="/index" component={AllRecipe}/>
-        <Route exact path="/addrecipe" component={AddRecipePage}/>
-      </MainContainBody>
-
+        <animated.div style={props}>
+            <MainContainBody>
+                <Route exact path="/index" component={AllRecipe}/>
+                <Route exact path="/addrecipe" component={AddRecipePage}/>
+            </MainContainBody>
+        </animated.div>
       </Router>
       
     </div>

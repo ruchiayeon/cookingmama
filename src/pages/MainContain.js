@@ -90,28 +90,16 @@ class FileUploader extends Component{
   )}
 }*/
 
-class Clock extends Component{
-  constructor(props) {
-    super(props)
-    this.state = {date: new Date()}
-}
+
+class ListPage extends Component {
+
   render(){
-    return(
-      <p>{this.state.date.toLocaleTimeString()}</p>
-    )
-}}
-
-function AllRecipe() {
-  return (
-    <>
-     
+    return (
       <h1>All AllRecipe</h1>
-      <Clock/>
-      
-      
-      
-    </>
+     
   );
+  }
+
 }
 
-export default AllRecipe;
+export default ListPage;
