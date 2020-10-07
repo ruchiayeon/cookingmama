@@ -1,9 +1,13 @@
 import React,{Component} from "react";
 import {BsCloudUpload} from "react-icons/bs"
 import styled from "styled-components";
+
 //page routing
+import RecipeList from "./RecipeList"
+
 //import SimpleSlider from "./Silder"
 import "../index.css"
+
 //styled
 const MainContain =  styled.div`
     text-align: center; 
@@ -122,7 +126,7 @@ function AddRecipePage() {
       <Clock/>
       <FileUploader/>
       <textArea/>
-      
+      <RecipeList/>
     </>
   );
 }

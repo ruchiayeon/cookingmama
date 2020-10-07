@@ -23,7 +23,7 @@ import whisk from "./assets/images/whisk.svg"
   }
 `*/
 
-
+//App Styled info
 const Navbar =styled.nav`
   position: fixed;
   top: 0;
@@ -94,18 +94,18 @@ const Logo = styled.img`
 
 //App main nav & Contain Routes
 function App() {
+  //주석
     const props = useSpring({opacity: 1, from: {opacity: 0}});
     return (
     <div>
         
       <Router>
-
-    
+       {/*GNB 부분*/}
       <Navbar>
         <Link to="/index">
           <Logo src={whisk} className="App-logo" alt="logo" />
         </Link>
-
+       
         <NavContain>
           <Link to="/index">
             <BasicBtn>All Recipe</BasicBtn>
@@ -113,10 +113,11 @@ function App() {
         </NavContain>
 
       </Navbar>
-   
+       {/* ADD buttun 부분 => AddRecipe page 이동*/}
           <Link to ="/addrecipe">
             <Addbuttons trigger ={['hover','focus']}/>
           </Link>
+      
         <animated.div style={props}>
             <MainContainBody>
                 <Route exact path="/index" component={AllRecipe}/>
